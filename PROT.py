@@ -19,7 +19,7 @@ decode = {'UUU':'F', 'CUU':'L', 'AUU':'I', 'GUU':'V',
           'UGG':'W', 'CGG':'R', 'AGG':'R', 'GGG':'G'} 
 
 # open a file with the string
-with open ("rna_input.txt",'r') as input_rna:
+with open ("rosalind_prot.txt",'r') as input_rna:
     RNA = input_rna.read()
 
 # define an iterator that runs on the RNA code
@@ -32,5 +32,5 @@ while index < len(RNA):
     key = RNA[index]+RNA[index+1]+RNA[index+2]
     PROT += decode[key]
     index+=3
-# output the protein 
+# output the protein
 print PROT
