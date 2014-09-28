@@ -1,13 +1,26 @@
 __author__ = 'assafalon'
 # total number of generations
-n = 6
+n = 82
 # years to death
-m = 3
-# define a list with first two generations
-fib = [1,1]
-for gen in range(2,n):
-    add = fib[gen-1]+fib[gen-2]
-    if gen+1 >= (m):
-        add = add - fib[gen-m+1]
-    fib.append(add)
-print fib
+m = 19
+# define a list with the first couple that is as long as the amount of generations and will count how many
+# couples are in each generation
+n-=1
+fib = [1]
+for i in range(m-1):
+    fib.append(0)
+
+while n:
+    add = 0
+    for i in range (1,m):
+        add += fib[i]
+    fib.insert(0,add)
+    fib.pop(m)
+    n-=1
+total = 0
+for i in range(m):
+    total+=fib[i]
+print total
+
+
+
